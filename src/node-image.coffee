@@ -16,7 +16,7 @@ class JimpImage extends Image
             @img = image
             cb?(null, @)
     else if path.indexOf('http') == 0
-      https.get path, (r) =>
+      http.get path, (r) =>
         buff = new Buffer ''
         r.on 'data', (data) =>
           buff = Buffer.concat [buff, data]
